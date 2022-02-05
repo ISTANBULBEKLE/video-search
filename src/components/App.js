@@ -9,9 +9,9 @@ const App = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   //Just when app started to have a default search term  to be set
-  useEffect(() => {
-    onFormSubmit("moon");
-  }, []);
+  // useEffect(() => {
+  //   onFormSubmit("moon");
+  // }, []);
 
   const onFormSubmit = async (searchTerm) => {
     const searchResult = await videoSearch.get(`/search?term=${searchTerm}`);
