@@ -1,9 +1,21 @@
 import React from 'react';
 
-const VideoDetail = () => {
+const VideoDetail = ({selectedVideo}) => {
+
+    if(!selectedVideo) return <div>Loading...</div>;
+
     return (
         <div>
-            <h1>VideoDetail</h1>
+           <div className="ui embed">
+                <iframe 
+                    src={`https://www.youtube.com/embed/${selectedVideo.id.videoId}`} 
+                    title="video player"
+                />
+           </div>
+            <div className="ui segment">
+                <h4 className="header">{selectedVideo.snippet.title}</h4>
+                <p>{selectedVideo.snippet.description}</p>
+            </div>
         </div>
     );
 }
